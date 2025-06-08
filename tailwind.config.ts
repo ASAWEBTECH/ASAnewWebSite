@@ -14,6 +14,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
         shine: 'shine 0.5s ease-in-out',

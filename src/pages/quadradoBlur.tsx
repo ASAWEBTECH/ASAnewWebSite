@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../styles/styles.css';
+import Image from 'next/image';
 
 const Quadrado = () => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>([false, false, false]);
@@ -37,22 +37,22 @@ const Quadrado = () => {
         }
       });
     };
-  }, []);
+  });
 
   const quadradosData = [
     {
-      title: 'Elementery',
-      imgSrc: './A2.png',
+      title: 'Elementary',
+      imgSrc: '/A2.png',
       buttonColor: '#00A2E8',
     },
     {
       title: 'Middle School',
-      imgSrc: './A1.png',
+      imgSrc: '/A1.png',
       buttonColor: '#22B14C',
     },
     {
       title: 'High School',
-      imgSrc: './A3.png',
+      imgSrc: '/A3.png',
       buttonColor: 'red',
     },
   ];
@@ -62,7 +62,7 @@ const Quadrado = () => {
       {quadradosData.map((item, index) => (
         <div
           key={index}
-          ref={el => quadradoRefs.current[index] = el}
+          ref={el => { quadradoRefs.current[index] = el; }}
           style={{
             ...styles.quadradoBlur,
             opacity: visibleItems[index] ? 1 : 0,
@@ -72,12 +72,21 @@ const Quadrado = () => {
         >
           <div style={styles.divInQuadrado}>
             <p style={styles.textQuadrado}>{item.title}</p>
-            <button style={{ ...styles.buttonQuadrado, backgroundColor: item.buttonColor }}>
+            <button
+              style={{ ...styles.buttonQuadrado, backgroundColor: item.buttonColor }}
+              onClick={() => window.location.href = "/Education"}
+            >
               <p style={styles.textButton}>View More</p>
             </button>
           </div>
           <div style={styles.conteudoQuadrado}>
-            <img src={item.imgSrc} alt={item.title} style={styles.imgAlunos} />
+            <Image
+              src={item.imgSrc}
+              alt={item.title}
+              style={styles.imgAlunos}
+              width={300}
+              height={370}
+            />
           </div>
         </div>
       ))}
