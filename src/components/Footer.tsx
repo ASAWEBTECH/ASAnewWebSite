@@ -12,8 +12,9 @@ import { WhatsAppButton } from "./WhatsAppButton";
             <div className="space-y-2">
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                +244 945333000
+                +244 945333000 | 945217135 | 929842625
               </p>
+            
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 admissions@asangola.com
@@ -53,8 +54,8 @@ import { WhatsAppButton } from "./WhatsAppButton";
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="mb-4">Subscribe to our newsletter for updates</p>
+            <h3 className="text-xl font-bold mb-4">Social Media</h3>
+            <p className="mb-4">Follow us on our social media</p>
             
             <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
                <a

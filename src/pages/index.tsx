@@ -82,11 +82,11 @@ const AnimatedSection = ({ children, className = "", style = {}, delay = 0 }: An
 export default function Home() {
 
   const images = [
-    "/im1.jpg",
-    "/im2.jpg",
-    "/im3.jpg",
-    "/im4.jpg",
-    "/im5.jpg",
+    "/im1.webp",
+    "/im2.webp",
+    "/im3.webp",
+    "/im4.webp",
+    "/im5.webp",
   ];
 
   return (
@@ -97,8 +97,6 @@ export default function Home() {
       <div className="min-h-screen bg-gray-100">
         <ImageSlider
           images={images}
-          title="WELCOME TO AMERICAN SCHOOLS OF ANGOLA"
-          description="Empowering Students in Angola with a Modern, American-Style Education. #BEEXTRAORDINARY"
         />
 
         <AnimatedSection delay={200}>

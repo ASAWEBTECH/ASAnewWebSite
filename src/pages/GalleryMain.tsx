@@ -125,7 +125,7 @@ function GalleryMain() {
       <div className="relative h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/Moments.png"
+            src="/Moments.webp"
             alt="Gallery background"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
@@ -169,20 +169,20 @@ function GalleryMain() {
             {[
               {
                 image: "/SportDay.jpg",
-                title: "Sports Day",
-                description: "The magic of sports moment",
+                title: "A Strategic Dive in Mussulo",
+                description: "A strategic opportunity for relaxation before exams",
                 barra: "#0083cb",
               },
               {
                 image: "/Fy.jpg",
-                title: "New Academic Year",
-                description: "Starting new academic year with happiness",
+                title: "Perfomance on Jazz Day",
+                description: "More than a performance, a celebration of culture and talent",
                 barra: "#fdaf17",
               },
               {
                 image: "/OR.JPG",
-                title: "WorkShop Breast Cancer Awareness",
-                description: "Prevent to Better Care",
+                title: "United Youth Taekwondo Tournament",
+                description: "A day of strength, discipline, and sportsmanship",
                 barra: "#008633",
               },
             ].map((item, index) => (
@@ -221,7 +221,7 @@ function GalleryMain() {
         <div className="max-w-7xl mx-auto">
           <div className="w-[800px] h-[60px] bg-[#0083cb] justify-self-center mb-5 p-2 rounded-tl-[60px] rounded-br-[60px] sm:w-[600px] md:w-[700px] lg:w-[800px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-12 text-center">
-              Sports Day
+              Srategic Dive in Mussulo
             </h2>
           </div>
           
@@ -229,7 +229,7 @@ function GalleryMain() {
             <div className="space-y-6">
               {/* Fotos no topo */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["/G1.jpg", "/G2.jpg", "/G3.jpg", "/G4.jpg"].map((image, index) => (
+                {["/SportDay.jpg", "/G2.webp", "/G3.webp", "/G4.webp"].map((image, index) => (
                   <div
                     key={index}
                     className="relative group overflow-hidden aspect-square rounded-lg"
@@ -258,7 +258,7 @@ function GalleryMain() {
                 </div>
                 
                 <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center h-full">
-                  <h3 className="text-2xl font-bold text-[#0083cb] mb-4">Sports Day</h3>
+                  <h3 className="text-2xl font-bold text-[#0083cb] mb-4">Srategic Dive in Mussulo</h3>
                   <p className="text-gray-700 text-lg">
                     A celebration of athleticism, teamwork, and school spirit! Our Sports Day brings together students, teachers, and families for a day filled with fun competitions, encouragement, and unforgettable memories.
                   </p>
@@ -274,7 +274,7 @@ function GalleryMain() {
         <div className="max-w-7xl mx-auto">
           <div className="w-[800px] h-[60px] bg-[#fdaf17] justify-self-center mb-5 p-2 rounded-tl-[60px] rounded-br-[60px] sm:w-[600px] md:w-[700px] lg:w-[800px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-12 text-center">
-              New Academic Year
+              Performance on Jazz Day
             </h2>
           </div>
           
@@ -282,7 +282,7 @@ function GalleryMain() {
             <div className="space-y-6">
               {/* Fotos no topo */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["/GG1.jpg", "/GG2.jpg", "/GG3.jpg", "/GG4.jpg"].map(
+                {["/fy.jpg", "/GG2.webp", "/GG3.webp", "/GG4.webp"].map(
                   (image, index) => (
                     <div
                       key={index}
@@ -313,7 +313,7 @@ function GalleryMain() {
                 </div>
                 
                 <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center h-full">
-                  <h3 className="text-2xl font-bold text-[#fdaf17] mb-4">New Academic Year</h3>
+                  <h3 className="text-2xl font-bold text-[#fdaf17] mb-4">Performance on Jazz Day</h3>
                   <p className="text-gray-700 text-lg">
                     The beginning of a new academic year is always a moment of excitement and hope. We welcome our students with open arms and look forward to a year full of learning, growth, and new friendships!
                   </p>
@@ -329,7 +329,7 @@ function GalleryMain() {
         <div className="max-w-7xl mx-auto">
           <div className="w-[800px] h-[60px] bg-[#008633] justify-self-center mb-5 p-2 rounded-tl-[60px] rounded-br-[60px] sm:w-[600px] md:w-[700px] lg:w-[800px] mx-auto">
             <h2 className="text-4xl font-bold text-white mb-12 text-center">
-              WorkShop Breast Cancer Awareness
+              United Youth Taekwondo Tournament
             </h2>
           </div>
           
@@ -337,7 +337,7 @@ function GalleryMain() {
             <div className="space-y-6">
               {/* Fotos no topo */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["/GGG1.jpg", "/GGG2.jpg", "/GGG3.jpg", "/GGG4.jpg"].map(
+                {["/GGG1.webp", "/GGG2.webp", "/GGG3.webp", "/GGG4.webp"].map(
                   (image, index) => (
                     <div
                       key={index}
@@ -368,7 +368,7 @@ function GalleryMain() {
                 </div>
                 
                 <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center h-full">
-                  <h3 className="text-2xl font-bold text-[#008633] mb-4">Workshop Breast Cancer Awareness</h3>
+                  <h3 className="text-2xl font-bold text-[#008633] mb-4">United Youth Taekwondo Tournament</h3>
                   <p className="text-gray-700 text-lg">
                     Promoting awareness and prevention is key to better care. Our workshop brings vital information and support to our community, empowering everyone to take action for their health.
                   </p>

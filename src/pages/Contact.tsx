@@ -85,6 +85,8 @@ export default function Contact() {
                 Phone
               </h3>
               <p className="text-gray-600 font-medium">+ (244) 945 333 000</p>
+              <p className="text-gray-600 font-medium">+ (244) 929 842 625</p>
+              <p className="text-gray-600 font-medium">+ (244) 945 217 135</p>
             </div>
 
             {/* Email Block */}
@@ -95,7 +97,9 @@ export default function Contact() {
               <h3 className="font-semibold text-lg mb-2 text-purple-700">
                 Email
               </h3>
-              <p className="text-gray-600 font-medium">admissions@asangola.com</p>
+              <p className="text-gray-600 font-medium">
+                admissions@asangola.com
+              </p>
             </div>
 
             {/* Business Hours Block */}

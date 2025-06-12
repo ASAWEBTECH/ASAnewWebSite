@@ -42,17 +42,18 @@ const Quadrado = () => {
   const quadradosData = [
     {
       title: 'Elementary',
-      imgSrc: '/A2.png',
-      buttonColor: '#00A2E8',
-    },
-    {
-      title: 'Middle School',
-      imgSrc: '/A1.png',
+      imgSrc: '/A2.webp',
       buttonColor: '#22B14C',
     },
     {
+      title: 'Middle School',
+      imgSrc: '/A1.webp',
+      buttonColor: '#00A2E8',
+     
+    },
+    {
       title: 'High School',
-      imgSrc: '/A3.png',
+      imgSrc: '/A3.webp',
       buttonColor: 'red',
     },
   ];
@@ -84,8 +85,8 @@ const Quadrado = () => {
               src={item.imgSrc}
               alt={item.title}
               style={styles.imgAlunos}
-              width={300}
-              height={370}
+              width={280}
+              height={320}
             />
           </div>
         </div>
@@ -159,9 +160,7 @@ const styles = {
   imgAlunos: {
     position: 'absolute' as const,
     marginBottom: '-10px',
-    marginRight: '-50px',
-    width: '300px',
-    height: '370px',
+    marginRight: '-20px',
     alignSelf: 'flex-end',
   },
 };

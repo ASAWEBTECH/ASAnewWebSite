@@ -141,13 +141,11 @@ function Education() {
         ))}
         <div className="flex justify-center pb-5">
           <Image
-            src="/advenced.jpg"
-            alt="Social media icon"
-            width={350}
-            height={200}
+            src="/importantLogos.jpg"
+            alt="Important Logos"
+            width={700}
+            height={700}
             style={{
-              width: "350px",
-              height: "auto",
               justifySelf: "center",
               paddingBottom: "20px",
             }}

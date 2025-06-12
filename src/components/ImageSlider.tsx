@@ -3,46 +3,78 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedButton } from "./AnimatedButton";
 import Image from "next/image";
 
+
 interface ImageSliderProps {
   images: string[];
   interval?: number;
-  title: string;
-  description: string;
 }
 
 export function ImageSlider({
   images,
   interval = 5000,
-  title,
-  description,
 }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [textVisible, setTextVisible] = useState(true);
+
+  // Lista de títulos para cada slide
+const slideTitles: string[] = [
+  "Academic Excellence with Real Results",
+  "Modern Technology for Better Learning",
+  "Active Physical and Sports Development",
+  "Safe, Welcoming and Inclusive Environment",
+  "Complete Preparation for a Bright Future",
+];
+
+
+
+  // Descrição fixa
+  const fixedDescription =
+    "We are a unique K-14 School offering Pre K to early college High School United States curriculum.";
+
+  // Garantir que temos título para todas as imagens
+  const getCurrentTitle = (index: number): string => {
+    return slideTitles[index % slideTitles.length] || slideTitles[0];
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((current) => (current + 1) % images.length);
+      const newIndex = (currentIndex + 1) % images.length;
+      changeSlide(newIndex);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [images.length, interval]);
+  }, [images.length, interval, currentIndex]);
+
+  const changeSlide = (newIndex: number) => {
+    setTextVisible(false);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setTextVisible(true);
+    }, 200);
+  };
 
   const goToNext = () => {
-    setCurrentIndex((current) => (current + 1) % images.length);
+    const newIndex = (currentIndex + 1) % images.length;
+    changeSlide(newIndex);
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((current) => (current - 1 + images.length) % images.length);
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    changeSlide(newIndex);
   };
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger animations after component mounts
+    // Reset animation state when slide changes
+    setIsLoaded(false);
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 100);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [currentIndex]);
+
+  const currentTitle = getCurrentTitle(currentIndex);
 
   return (
     <div className="relative h-[750px] overflow-hidden">
@@ -71,11 +103,13 @@ export function ImageSlider({
       <div className="absolute inset-0 flex items-center justify-center md:justify-start">
         <div className="text-left text-white max-w-4xl px-4 mt-16 pl-6 md:pl-40 flex flex-col items-start w-full">
           {/* Title with slide-in from left animation */}
+          <h1 className="font-bold font-poppins mb-2  leading-relaxed sm:text-xl md:text-xl max-w-xl">Welcome to American Schools of Angola</h1>
+          <div className="w-20 h-1 bg-[#ff9f00] mb-4" />
           <h1
-            className={`font-bold font-poppins mb-6 leading-tight transition-all duration-1000 ease-out
-      text-2xl sm:text-4xl md:text-5xl max-w-2xl
+            className={`font-bold font-poppins mb-6 leading-relaxed transition-all duration-1000 ease-out
+      text-2xl sm:text-4xl md:text-5xl max-w-xl
       ${
-        isLoaded
+        isLoaded && textVisible
           ? "opacity-100 translate-x-0 translate-y-0"
           : "opacity-0 -translate-x-20 translate-y-4"
       }`}
@@ -83,15 +117,15 @@ export function ImageSlider({
               transitionDelay: "200ms",
             }}
           >
-            {title}
+            {currentTitle}
           </h1>
 
-          {/* Description with slide-in from left animation (delayed) */}
+          {/* Fixed Description with slide-in from left animation (delayed) */}
           <p
             className={`transition-all font-poppins duration-1000 ease-out
-      text-base sm:text-lg md:text-xl max-w-xl
+      text-sm sm:text-lg md:text-xl max-w-xl
       ${
-        isLoaded
+        isLoaded && textVisible
           ? "opacity-100 translate-x-0 translate-y-0"
           : "opacity-0 -translate-x-16 translate-y-3"
       }`}
@@ -99,9 +133,9 @@ export function ImageSlider({
               transitionDelay: "500ms",
             }}
           >
-            {description}
+            {fixedDescription}
           </p>
-
+          
           {/* Buttons container with fade-in and slide-up animation */}
           <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full items-stretch sm:items-center sm:justify-start">
             <div
@@ -165,12 +199,9 @@ export function ImageSlider({
               transitionDelay: "1300ms",
             }}
           >
-            <span>+244 923 456 789</span>
-            <span className="h-3 border-l border-[#ff9f00] mx-1"></span>
-            <span>admissions@asangola.com</span>
           </div>
           {/* Social media icons */}
-          <div className="flex flex-row gap-2 mt-1">
+          <div className="flex flex-row gap-2 -mt-24 mr-16">
             {[
               {
                 href: "https://www.linkedin.com/company/asangolaofficial/posts/?feedView=all",
